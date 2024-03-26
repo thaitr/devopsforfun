@@ -5,6 +5,11 @@ variable "resource_group" {
   }
 }
 
+variable "location" {
+  type    = string
+  default = "eastus"
+}
+
 variable "vnet_name" {
   type    = string
   default = "apim-vnet-01"
@@ -13,7 +18,16 @@ variable "vnet_name" {
 variable "global_settings" {
   default = {
     default_region = "eastus"
+    prefixes       = ["ABC"]
+    random_length  = 3
+    passthrough    = false
+    use_slug       = true
   }
+}
+
+variable "prefix" {
+  type    = list(string)
+  default = ["ABC"]
 }
 
 variable "client_config" {
@@ -25,3 +39,13 @@ variable "subscription_id" {
   type    = string
   default = ""
 }
+
+variable "settings" {
+  default = {
+    name            = "api_management"
+    publisher_name  = "My Publisher Name"
+    publisher_email = "someone@emailaddress.com"
+    sku_name        = "Developer_1"
+  }
+}
+

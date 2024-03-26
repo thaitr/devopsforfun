@@ -8,7 +8,13 @@ module "apim" {
   client_config   = data.azurerm_client_config.current.tenant_id
   global_settings = var.global_settings
   vnets           = var.vnet_name
-  settings        = "apim"
+  settings        = var.settings
+}
+
+
+resource "azurerm_resource_group" "rg" {
+  location = var.resource_group.location
+  name     = var.resource_group.name
 }
 
 #module "apim_gw" {
