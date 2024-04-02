@@ -41,6 +41,7 @@ variable "subscription_id" {
 }
 
 variable "settings" {
+  description = "Client configuration settings"
   default = {
     name            = "api_management"
     publisher_name  = "My Publisher Name"
@@ -49,3 +50,12 @@ variable "settings" {
   }
 }
 
+variable "location_data" {
+  description = "Additional data location block inputing to Gateway"
+  default = {
+    name     = "example name"
+    city     = "example city"
+    district = "example district"
+    region   = "example region"
+  }
+}

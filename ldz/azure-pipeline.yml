@@ -1,0 +1,75 @@
+name: "Testing Terraform Phases"
+
+trigger:
+  branches:
+    include: ["develop"]
+
+variables:
+  - name: "module_path"
+    value: "$(System.DefaultWorkingDirectory)/Terraform"
+  - name: "serviceconnection"
+    value: "My-DevOps-SP"
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: validate
+    displayName: "Terraform Validate"
+    jobs:
+      - job: validate
+        continueOnError: false
+        steps:
+          - task: TerraformInstaller@1
+            displayName: "Install Terraform"
+            inputs:
+              terraformVersion: "latest"
+          - task: TerraformCLI@1
+            displayName: "terraform init"
+            inputs:
+              command: "init"
+              workingDirectory: "$(module_path)/environments"
+          - task: TerraformCLI@1
+            displayName: "terraform formatting"
+            inputs:
+              command: "fmt"
+              workingDirectory: "$(module_path)/environments"
+          - task: TerraformCLI@1
+            displayName: "terraform validate"
+            inputs:
+              command: "validate"
+              workingDirectory: "$(module_path)/environments"
+          - task: TerraformCLI@1
+            displayName: "Terraform plan"
+            inputs:
+              command: "plan"
+              commandOptions: " -var-file=./dev.tfvars -out=dev.tfplan"
+              workingDirectory: $(module_path)/environments
+              environmentServiceName: $(serviceconnection)
+              #providerAzureRmSubscriptionId: <subs_id og landingzon>
+          - task: TerraformCLI@1
+            displayName: "Terraform appy"
+            inputs:
+              command: "apply"
+              commandOptions: " dev.tfplan"
+              workingDirectory: $(module_path)/environments
+              environmentServiceName: $(serviceconnection)
+              #providerAzureRmSubscriptionId: <subs_id og landingzon>
+  # - stage: plan
+  #   displayName: "Terraform Plan"
+  #   jobs:
+  #     - job: plan
+  #       continueOnError: false
+  #       steps:
+  #         - task: TerraformInstaller@1
+  #           displayName: "Install Terraform"
+  #           inputs:
+  #             terraformVersion: "latest"
+  #         - task: TerraformCLI@1
+  #           displayName: "Terraform plan"
+  #           inputs:
+  #             command: "plan"
+  #             commandOptions: " -var-file=./dev.tfvars -out=dev.tfplan"
+  #             workingDirectory: $(module_path)/environments
+  #             environmentServiceName: $(serviceconnection)
+  #             #providerAzureRmSubscriptionId: <subs_id og landingzon>
