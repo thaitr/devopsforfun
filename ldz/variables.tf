@@ -1,23 +1,20 @@
 variable "resource_group" {
+  type = map(string)
   default = {
-    name     = "apim-test-rg"
-    location = "eastus"
+    name     = "my-apim-default"
+    location = "eastus2"
   }
-}
-
-variable "location" {
-  type    = string
-  default = "eastus"
 }
 
 variable "vnet_name" {
   type    = string
-  default = "apim-vnet-01"
+  default = "my-vnet-default"
 }
 
 variable "global_settings" {
+  #type = list(string)
   default = {
-    default_region = "eastus"
+    default_region = "eastus2"
     prefixes       = ["ABC"]
     random_length  = 3
     passthrough    = false
@@ -25,23 +22,17 @@ variable "global_settings" {
   }
 }
 
-variable "prefix" {
-  type    = list(string)
-  default = ["ABC"]
-}
+# variable "prefix" {
+#   type    = list(string)
+#   default = ["ABC"]
+# }
 
-variable "client_config" {
-  type    = string
-  default = "tenant_id"
-}
-
-variable "subscription_id" {
-  type    = string
-  default = ""
-}
+# variable "client_config" {
+#   type = map(string)
+# }
 
 variable "settings" {
-  description = "Client configuration settings"
+  type = map(string)
   default = {
     name            = "api_management"
     publisher_name  = "My Publisher Name"
@@ -50,12 +41,12 @@ variable "settings" {
   }
 }
 
-variable "location_data" {
-  description = "Additional data location block inputing to Gateway"
-  default = {
-    name     = "example name"
-    city     = "example city"
-    district = "example district"
-    region   = "example region"
-  }
-}
+# variable "location_data" {
+#   description = "Additional data location block inputing to Gateway"
+#   default = {
+#     name     = "example name"
+#     city     = "example city"
+#     district = "example district"
+#     region   = "example region"
+#   }
+# }
