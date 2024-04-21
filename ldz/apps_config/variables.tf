@@ -1,7 +1,7 @@
 variable "resource_group" {
-  type = map(string)
-  default = {
-    name     = "my-app-config-rg"
-    location = "eastus2"
-  }
+  description = "Resource group object"
+}
+
+variable "environments" {
+  description = "Environment object type"
 }

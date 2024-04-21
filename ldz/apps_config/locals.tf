@@ -3,7 +3,9 @@ locals {
     location  = "eastus",
     terraform = true
   }
+  prefix           = "apc"
   app_config_label = "music_label"
+  app_config_name  = format("%s-%s-%s", local.prefix, var.environments.va.type, var.resource_group.location)
 
   config_mapping = {
     key1 = {
@@ -23,13 +25,5 @@ locals {
       value = "value4"
     }
 
-  }
-  environment = {
-    dev = {
-      location = "eastus"
-    }
-    prod = {
-      location = "eastu2"
-    }
   }
 }
