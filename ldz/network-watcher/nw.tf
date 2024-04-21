@@ -1,27 +1,5 @@
-# resource "azurerm_network_watcher" "nw" {
-#   name                = "example-Watcher-nw"
-#   location            = azurerm_resource_group.rg.location
-#   resource_group_name = azurerm_resource_group.rg.name
-# }
-
-# data "azurerm_network_watcher" "nw" {
-#   name                = "NetworkWatcher_eastus"
-#   resource_group_name = azurerm_resource_group.test.name
-# }
-# output "network_watcher_id" {
-#   value = data.azurerm_network_watcher.nw.id
-# }
-# output "network_watcher_name" {
-#   value = data.azurerm_network_watcher.nw.name
-# }
-
-# resource "azurerm_log_analytics_workspace" "law" {
-#   name                = "test-law"
-#   location            = azurerm_resource_group.test.location
-#   resource_group_name = azurerm_resource_group.test.name
-#   sku                 = "PerGB2018"
-# }
-
+## Setup network connection option
+#
 # resource "azurerm_network_connection_monitor" "connectionMonitor" {
 #   name = "example-Monitor"
 #   # network_watcher_id = azurerm_network_watcher.nw.id
@@ -72,26 +50,29 @@
 
 #   depends_on = [azurerm_virtual_machine_extension.extension]
 # }
+#
 
-# resource "azurerm_network_watcher_flow_log" "test" {
-#   network_watcher_name = azurerm_network_watcher.test.name
-#   resource_group_name  = azurerm_resource_group.test.name
-#   name                 = "example-log"
+### setup Flow Log
+resource "azurerm_network_watcher_flow_log" "target" {
+  network_watcher_name = data.azurerm_network_watcher.target.name
+  resource_group_name  = data.azurerm_network_watcher.target.resource_group_name
+  name                 = "test-flowlog"
 
-#   network_security_group_id = azurerm_network_security_group.test.id
-#   storage_account_id        = azurerm_storage_account.test.id
-#   enabled                   = true
+  network_security_group_id = data.azurerm_network_security_group.target.id
+  storage_account_id        = data.azurerm_storage_account.target.id
+  enabled                   = true
+  version                   = 2
 
-#   retention_policy {
-#     enabled = true
-#     days    = 7
-#   }
+  retention_policy {
+    enabled = true
+    days    = 2
+  }
 
-#   traffic_analytics {
-#     enabled               = true
-#     workspace_id          = azurerm_log_analytics_workspace.test.workspace_id
-#     workspace_region      = azurerm_log_analytics_workspace.test.location
-#     workspace_resource_id = azurerm_log_analytics_workspace.test.id
-#     interval_in_minutes   = 10
-#   }
-# }
+  traffic_analytics {
+    enabled               = true
+    workspace_id          = data.azurerm_log_analytics_workspace.target.workspace_id
+    workspace_region      = data.azurerm_log_analytics_workspace.target.location
+    workspace_resource_id = data.azurerm_log_analytics_workspace.target.id
+    interval_in_minutes   = 10
+  }
+}
