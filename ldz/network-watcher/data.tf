@@ -17,11 +17,11 @@ data "azurerm_network_watcher" "target" {
   resource_group_name = "NetworkWatcherRG"
 }
 
-data "azurerm_virtual_network" "target" {
-  name                = azurerm_virtual_network.target.name
-  resource_group_name = azurerm_resource_group.target.name
-  depends_on          = [azurerm_virtual_network.target]
-}
+# data "azurerm_virtual_network" "target" {
+#   name                = azurerm_virtual_network.target.name
+#   resource_group_name = azurerm_resource_group.target.name
+#   depends_on          = [azurerm_virtual_network.target]
+# }
 
 data "azurerm_network_security_group" "target" {
   name                = azurerm_network_security_group.target.name
