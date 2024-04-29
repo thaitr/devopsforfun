@@ -3,11 +3,18 @@ resource "azurerm_resource_group" "target" {
   location = var.regions.ny.loc
 }
 
-resource "azurerm_network_security_group" "target" {
-  name                = "acctestnsg"
+resource "azurerm_network_security_group" "nsg-01" {
+  name                = "acctestnsg-01"
   location            = azurerm_resource_group.target.location
   resource_group_name = azurerm_resource_group.target.name
 }
+
+resource "azurerm_network_security_group" "nsg-02" {
+  name                = "acctestnsg-02"
+  location            = azurerm_resource_group.target.location
+  resource_group_name = azurerm_resource_group.target.name
+}
+
 
 # Create Storage account
 resource "azurerm_storage_account" "target" {
