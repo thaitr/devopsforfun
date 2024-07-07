@@ -1,0 +1,109 @@
+# azurerm_api_management.apim will be destroyed
+  - resource "azurerm_api_management" "apim" {
+      - client_certificate_enabled    = false -> null
+      - developer_portal_url          = "https://apim-my-sub-eastus-dev.developer.azure-api.net" -> null
+      - gateway_disabled              = false -> null
+      - gateway_regional_url          = "https://apim-my-sub-eastus-dev-eastus-01.regional.azure-api.net" -> null
+      - gateway_url                   = "https://apim-my-sub-eastus-dev.azure-api.net" -> null
+      - id                            = "/subscriptions/e8fd1ad9-ad15-4ebb-b0c4-f3b4634cba57/resourceGroups/rg-vnet-eastus-dev/providers/Microsoft.ApiManagement/service/apim-my-sub-eastus-dev" -> null
+      - location                      = "eastus" -> null
+      - management_api_url            = "https://apim-my-sub-eastus-dev.management.azure-api.net" -> null
+      - name                          = "apim-my-sub-eastus-dev" -> null
+      - notification_sender_email     = "apimgmt-noreply@mail.windowsazure.com" -> null
+      - policy                        = [
+          - {
+              - xml_content = <<-EOT
+                    <!--
+                        IMPORTANT:
+                        - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.
+                        - Only the <forward-request> policy element can appear within the <backend> section element.
+                        - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.
+                        - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.
+                        - To add a policy position the cursor at the desired insertion point and click on the round button associated with the policy.
+                        - To remove a policy, delete the corresponding policy statement from the policy document.
+                        - Policies are applied in the order of their appearance, from the top down.
+                    -->
+                    <policies>
+                        <inbound />
+                        <backend>
+                                <forward-request />
+                        </backend>
+                        <outbound />
+                    </policies>
+                EOT
+              - xml_link    = ""
+            },
+        ] -> null
+      - portal_url                    = "https://apim-my-sub-eastus-dev.portal.azure-api.net" -> null
+      - private_ip_addresses          = [] -> null
+      - public_ip_addresses           = [
+          - "51.8.205.251",
+        ] -> null
+      - public_network_access_enabled = true -> null
+      - publisher_email               = "someone@emailaddress.com" -> null
+      - publisher_name                = "My Publisher Name" -> null
+      - resource_group_name           = "rg-vnet-eastus-dev" -> null
+      - scm_url                       = "https://apim-my-sub-eastus-dev.scm.azure-api.net" -> null
+      - sku_name                      = "Developer_1" -> null
+      - tags                          = {} -> null
+      - virtual_network_type          = "None" -> null
+      - zones                         = [] -> null
+
+      - delegation {
+          - subscriptions_enabled     = false -> null
+          - user_registration_enabled = false -> null
+        }
+
+      - hostname_configuration {
+          - proxy {
+              - certificate_source           = "BuiltIn" -> null
+              - default_ssl_binding          = true -> null
+              - host_name                    = "apim-my-sub-eastus-dev.azure-api.net" -> null
+              - negotiate_client_certificate = false -> null
+            }
+        }
+
+      - protocols {
+          - enable_http2 = false -> null
+        }
+
+      - security {
+          - enable_backend_ssl30                                = false -> null
+          - enable_backend_tls10                                = false -> null
+          - enable_backend_tls11                                = false -> null
+          - enable_frontend_ssl30                               = false -> null
+          - enable_frontend_tls10                               = false -> null
+          - enable_frontend_tls11                               = false -> null
+          - tls_ecdhe_ecdsa_with_aes128_cbc_sha_ciphers_enabled = false -> null
+          - tls_ecdhe_ecdsa_with_aes256_cbc_sha_ciphers_enabled = false -> null
+          - tls_ecdhe_rsa_with_aes128_cbc_sha_ciphers_enabled   = false -> null
+          - tls_ecdhe_rsa_with_aes256_cbc_sha_ciphers_enabled   = false -> null
+          - tls_rsa_with_aes128_cbc_sha256_ciphers_enabled      = false -> null
+          - tls_rsa_with_aes128_cbc_sha_ciphers_enabled         = false -> null
+          - tls_rsa_with_aes128_gcm_sha256_ciphers_enabled      = false -> null
+          - tls_rsa_with_aes256_cbc_sha256_ciphers_enabled      = false -> null
+          - tls_rsa_with_aes256_cbc_sha_ciphers_enabled         = false -> null
+          - tls_rsa_with_aes256_gcm_sha384_ciphers_enabled      = false -> null
+          - triple_des_ciphers_enabled                          = false -> null
+        }
+
+      - sign_in {
+          - enabled = false -> null
+        }
+
+      - sign_up {
+          - enabled = false -> null
+
+          - terms_of_service {
+              - consent_required = false -> null
+              - enabled          = false -> null
+            }
+        }
+
+      - tenant_access {
+          - enabled       = false -> null
+          - primary_key   = (sensitive value) -> null
+          - secondary_key = (sensitive value) -> null
+          - tenant_id     = "/tenant/access" -> null
+        }
+    }

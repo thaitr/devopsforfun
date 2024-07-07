@@ -1,0 +1,7 @@
+client_config = {
+    client_id       = "04b07795-8ddb-461a-bbee-02f9e1bf7b46"
+    id              = "Y2xpZW50Q29uZmlncy9jbGllbnRJZD0wNGIwNzc5NS04ZGRiLTQ2MWEtYmJlZS0wMmY5ZTFiZjdiNDY7b2JqZWN0SWQ9NGUyZGFkYTItOGZmNC00OWQxLTlkNjMtMWYzYTM3NTZkZjhiO3N1YnNjcmlwdGlvbklkPWU4ZmQxYWQ5LWFkMTUtNGViYi1iMGM0LWYzYjQ2MzRjYmE1Nzt0ZW5hbnRJZD1hMDg3ZTMzYS1mMzE4LTRiYjQtOGJiMS1kZDg2YzE1MWE1MmY="
+    object_id       = "4e2dada2-8ff4-49d1-9d63-1f3a3756df8b"
+    subscription_id = "e8fd1ad9-ad15-4ebb-b0c4-f3b4634cba57"
+    tenant_id       = "a087e33a-f318-4bb4-8bb1-dd86c151a52f"
+}

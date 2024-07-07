@@ -1,0 +1,95 @@
+{
+    "etag": "AAAAAAEIqtA=",
+    "properties": {
+        "publisherEmail": "someone@emailaddress.com",
+        "publisherName": "My Publisher Name",
+        "notificationSenderEmail": "apimgmt-noreply@mail.windowsazure.com",
+        "provisioningState": "Succeeded",
+        "targetProvisioningState": "",
+        "createdAtUtc": "2024-04-03T03:01:52.9341561Z",
+        "gatewayUrl": "https://abc-apim-apimanagement-odg.azure-api.net",
+        "gatewayRegionalUrl": "https://abc-apim-apimanagement-odg-eastus-01.regional.azure-api.net",
+        "portalUrl": null,
+        "developerPortalUrl": "https://abc-apim-apimanagement-odg.developer.azure-api.net",
+        "dataApiUrl": null,
+        "managementApiUrl": "https://abc-apim-apimanagement-odg.management.azure-api.net",
+        "scmUrl": "https://abc-apim-apimanagement-odg.scm.azure-api.net",
+        "hostnameConfigurations": [
+            {
+                "type": "Proxy",
+                "hostName": "abc-apim-apimanagement-odg.azure-api.net",
+                "encodedCertificate": null,
+                "keyVaultId": null,
+                "certificatePassword": null,
+                "negotiateClientCertificate": false,
+                "certificate": null,
+                "defaultSslBinding": true,
+                "identityClientId": null,
+                "certificateSource": "BuiltIn",
+                "certificateStatus": null
+            }
+        ],
+        "publicIPAddresses": [
+            "4.255.14.63"
+        ],
+        "privateIPAddresses": null,
+        "additionalLocations": null,
+        "virtualNetworkConfiguration": null,
+        "customProperties": {
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Ssl30": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Tls10": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Tls11": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TLS_RSA_WITH_AES_128_CBC_SHA": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TLS_RSA_WITH_AES_128_CBC_SHA256": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TLS_RSA_WITH_AES_128_GCM_SHA256": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TLS_RSA_WITH_AES_256_CBC_SHA": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TLS_RSA_WITH_AES_256_CBC_SHA256": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TLS_RSA_WITH_AES_256_GCM_SHA384": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TripleDes168": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Ssl30": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls10": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls11": "false",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Protocols.Server.Http2": "False"
+        },
+        "virtualNetworkType": "None",
+        "certificates": [],
+        "disableGateway": false,
+        "natGatewayState": "Disabled",
+        "outboundPublicIPAddresses": [
+            "4.255.14.63"
+        ],
+        "apiVersionConstraint": {
+            "minApiVersion": null
+        },
+        "publicIpAddressId": null,
+        "publicNetworkAccess": "Enabled",
+        "privateEndpointConnections": null,
+        "platformVersion": "stv2.1",
+        "configurationApi": null,
+        "legacyPortalStatus": "Disabled",
+        "developerPortalStatus": "Enabled"
+    },
+    "sku": {
+        "name": "Developer",
+        "capacity": 1
+    },
+    "identity": null,
+    "zones": null,
+    "systemData": {
+        "createdBy": "trthai@gmail.com",
+        "createdByType": "User",
+        "createdAt": "2024-04-03T03:01:52.9140562Z",
+        "lastModifiedBy": "trthai@gmail.com",
+        "lastModifiedByType": "User",
+        "lastModifiedAt": "2024-04-03T03:01:52.9140562Z"
+    },
+    "location": "East US",
+    "tags": {},
+    "id": "/subscriptions/e8fd1ad9-ad15-4ebb-b0c4-f3b4634cba57/resourceGroups/my-apim-rg/providers/Microsoft.ApiManagement/service/ABC-apim-apimanagement-odg",
+    "name": "ABC-apim-apimanagement-odg",
+    "type": "Microsoft.ApiManagement/service"
+}
